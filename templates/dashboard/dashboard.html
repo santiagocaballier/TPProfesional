@@ -39,8 +39,8 @@
                     // create line chart
                     var chart = anychart.line();
                     
-                    // var rangeSelector = anychart.ui.rangeSelector();
-                    // var rangePicker = anychart.ui.rangePicker();
+                    var rangeSelector = anychart.ui.rangeSelector();
+                    var rangePicker = anychart.ui.rangePicker();
                     
                     // set chart title
                     chart.title('{{ ctx_sensor_nombre }}');
@@ -69,8 +69,8 @@
                     chart.draw();
                     
                     // Render the range picker into an instance of a stock chart
-                    // rangePicker.render(chart);
-                    // rangeSelector.render(chart);
+                    rangePicker.render(chart);
+                    rangeSelector.render(chart);
             });</script>
         </div>
         <!-- /.col-lg-12 -->

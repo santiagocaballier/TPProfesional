@@ -6,12 +6,22 @@
 {% block base_body %}
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Home</h1>
+            <h1 class="page-header">Inicio</h1>
         </div>
         <div class="col-lg-12">
             {% if user.is_authenticated %}
-              Hi {{ user.username }}!
-              <p><a href="{% url 'logout' %}">logout</a></p>
+            <h2>Demostración prototipo para Trabajo Profesional - UBA</h2>
+            <h4> Profesora: Mónica Nitoli </h4>
+            <p></p>
+            <p></p>
+            <p> Integrantes:</p>
+            <p> - Lopez Carbonaro Martin</p>
+            <p> - Caballier Santiago</p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p> 1er Cuatrimestre - Junio de 2018</p>  
+              
             {% else %}
               <p>You are not logged in</p>
               <a href="{% url 'login' %}">login</a>

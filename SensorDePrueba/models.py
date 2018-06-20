@@ -15,5 +15,3 @@ class DataSensor(models.Model):
     
     def __str__(self):
         return str(self.datetime) + ' - ' + str(self.data)
-    
-    
