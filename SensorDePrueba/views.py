@@ -32,7 +32,7 @@ def get_data_sensor(request,sensor_nombre):
 
 
 def set_data_sensor(request,sensor_nombre,dataint,datadec):
-    result = 'FAIL'
+    result = 'FAIL\n'
     
     qsensor = Sensor.objects.filter(nombre=sensor_nombre)
     if qsensor:
@@ -45,6 +45,6 @@ def set_data_sensor(request,sensor_nombre,dataint,datadec):
         
         dsen.save()
         print(dsen)
-        result = 'OK'
+        result = 'OK\n'
         
     return HttpResponse(result)

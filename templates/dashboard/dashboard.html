@@ -7,10 +7,13 @@
 {% block base_head %}
     <link href="{% static "dashboard/css/anychart-ui.min.css" %}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{% static "dashboard/js/anychart-base.min.js" %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static "dashboard/js/anychart-ui.min.js" %}" charset="utf-8"></script>
+    
+    
     
     <style>html, body, #container {
         width: 100%;
-        height: 600px;
+        height: 500px;
         margin: 0;
         padding: 0;
         
@@ -36,6 +39,9 @@
                     // create line chart
                     var chart = anychart.line();
                     
+                    // var rangeSelector = anychart.ui.rangeSelector();
+                    // var rangePicker = anychart.ui.rangePicker();
+                    
                     // set chart title
                     chart.title('{{ ctx_sensor_nombre }}');
                     
@@ -49,10 +55,22 @@
                     // set chart data
                     chart.data(array_data);
                     
+                    
+                    // specify which chart range selector controls
+                    rangeSelector.target(chart);
+                    rangePicker.target(chart);
+                    
+                    // turn on X Scroller
+                    chart.xScroller(true);
+                    
                     // set container id for the chart
                     chart.container('container');
                     // initiate chart drawing
                     chart.draw();
+                    
+                    // Render the range picker into an instance of a stock chart
+                    // rangePicker.render(chart);
+                    // rangeSelector.render(chart);
             });</script>
         </div>
         <!-- /.col-lg-12 -->
